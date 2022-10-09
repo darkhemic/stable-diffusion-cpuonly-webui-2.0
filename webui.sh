@@ -91,12 +91,11 @@ sd_model_loading () {
         printf "AI Model already in place. Continuing...\n\n"
     else
         printf "\n\n########## MOVE MODEL FILE ##########\n\n"
-        printf "Please download the 1.4 AI Model from Huggingface (or another source) and place it inside of the stable-diffusion-cpuonly-webui-2.0 folder"
+        printf "Please download the 1.4 AI Model from Huggingface (or another source) and place it inside of the stable-diffusion-cpuonly-webui-2.0 folder\n\n"
         read -p "Once you have sd-v1-4.ckpt in the project root, Press Enter..."
         
         # Check to make sure checksum of models is the original one from HuggingFace and not a fake model set
         printf "fe4efff1e174c627256e44ec2991ba279b3816e364b49f9be2abc0b3ff3f8556 sd-v1-4.ckpt" | sha256sum --check || exit 1
-        mkdir $DIRECTORY/models/ldm/stable-diffusion-v1/       
         mv sd-v1-4.ckpt $DIRECTORY/models/ldm/stable-diffusion-v1/model.ckpt
         rm -r ./models
     fi
