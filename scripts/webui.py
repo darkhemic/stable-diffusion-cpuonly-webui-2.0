@@ -2642,12 +2642,4 @@ def run_headless():
         print(stats)
         print()
 
-@logger.catch
 
-if __name__ == '__main__':
-    set_logger_verbosity(opt.verbosity)
-    quiesce_logger(opt.quiet)
-    if opt.cli:
-        run_headless()
-    else:
-        launch_server()
