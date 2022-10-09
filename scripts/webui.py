@@ -489,7 +489,7 @@ def load_SD_model():
 
         model = instantiate_from_config(config.modelUNet)
         _, _ = model.load_state_dict(sd, strict=False)
-        model.cuda()
+        model.to(device)
         model.eval()
         model.turbo = opt.optimized_turbo
 
