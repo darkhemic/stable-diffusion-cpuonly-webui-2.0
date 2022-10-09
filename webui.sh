@@ -97,7 +97,6 @@ sd_model_loading () {
         # Check to make sure checksum of models is the original one from HuggingFace and not a fake model set
         printf "fe4efff1e174c627256e44ec2991ba279b3816e364b49f9be2abc0b3ff3f8556 sd-v1-4.ckpt" | sha256sum --check || exit 1
         mv sd-v1-4.ckpt $DIRECTORY/models/ldm/stable-diffusion-v1/model.ckpt
-        rm -r ./models
     fi
 }
 
