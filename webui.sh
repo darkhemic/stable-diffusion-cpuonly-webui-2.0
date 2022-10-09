@@ -163,7 +163,7 @@ launch_webui () {
     #        Streamlit ) printf "\nStarting Stable Diffusion WebUI: Streamlit Interface. Please Wait...\n"; python -m streamlit run scripts/webui_streamlit.py; break;;
      #       Gradio ) printf "\nStarting Stable Diffusion WebUI: Gradio Interface. Please Wait...\n"; python scripts/relauncher.py "$@"; break;;
       #  esac
-python scripts/relauncher.py
+python scripts/webui.py
    # done
 }
 
