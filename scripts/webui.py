@@ -210,7 +210,7 @@ def load_model_from_config(config, ckpt, verbose=False):
         print("unexpected keys:")
         print(u)
 
-    model.todevice()
+    model.to(device)
     model.eval()
     return model
 
