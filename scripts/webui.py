@@ -2573,7 +2573,7 @@ demo = draw_gradio_ui(opt,
                       LDSR=LDSR,
                       run_GFPGAN=run_GFPGAN,
                       run_RealESRGAN=run_RealESRGAN,
-                      job_manager=job_manager
+                      #job_manager=job_manager
                         )
 
 class ServerLauncher(threading.Thread):
