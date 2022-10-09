@@ -869,7 +869,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, imgproc=lambda
         # Hack: Detect the load event on the frontend
         # Won't be needed in the next version of gradio
         # See the relevant PR: https://github.com/gradio-app/gradio/pull/2108
-        load_detector = gr.Number(value=0, label="Load Detector", visible=False)
-        load_detector.change(None, None, None, _js=js(opt))
+        #load_detector = gr.Number(value=0, label="Load Detector", visible=False)
+        #load_detector.change(None, None, None, _js=js(opt))
         demo.load(lambda x: 42, inputs=load_detector, outputs=load_detector)
     return demo
