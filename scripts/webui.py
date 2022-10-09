@@ -95,6 +95,7 @@ from pathlib import Path
 from collections import namedtuple
 from functools import partial
 
+
 # tell the user which GPU the code is actually using
 if os.getenv("SD_WEBUI_DEBUG", 'False').lower() in ('true', '1', 'y'):
     gpu_in_use = opt.gpu
@@ -210,6 +211,7 @@ def load_model_from_config(config, ckpt, verbose=False):
         print("unexpected keys:")
         print(u)
 
+    device = torch.device("cpu") 
     model.to(device)
     model.eval()
     return model
