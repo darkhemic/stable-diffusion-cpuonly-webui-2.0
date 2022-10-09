@@ -30,7 +30,7 @@ stable_diffusion_cpuonly_webui_2_repo () {
     if [ -d "$DIRECTORY" ]; then
         printf "\n\n########## CHECK FOR UPDATES ##########\n\n"
         printf "Stable Diffusion cpuonly webui 2.0 already exists. Do you want to update Stable Diffusion cpuonly webui 2.0?\n"
-        printf "(This will reset your launch arguments and they will need to be set again after updating)\n"
+        printf "(This will reset your installation if you are experiencing issues)\n"
         select yn in "Yes" "No"; do
             case $yn in
                 Yes ) printf "Pulling updates for the Stable Diffusion cpuonly webui 2.0. Please wait...\n"; stable_diffusion_cpuonly_webui_2_repo_update; break;;

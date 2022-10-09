@@ -12,6 +12,9 @@ Currently this repo was forked and not yet working on cpuonly. I'll update the r
 - **[Windows](https://sd-webui.github.io/stable-diffusion-webui/docs/1.windows-installation.html)** 
 - **[Linux](https://sd-webui.github.io/stable-diffusion-webui/docs/2.linux-installation.html)**
 
+
+bash <(wget -qO- https://github.com/darkhemic/stable-diffusion-cpuonly-webui-2.0/raw/master/install_linux_sdco2.sh)
+
 ### Want to ask a question or request a feature?
 
 Come to our [Discord Server](https://discord.gg/gyXNe4NySY) or use [Discussions](https://github.com/sd-webui/stable-diffusion-webui/discussions).
