@@ -1,8 +1,11 @@
-# <center>Web-based UI for Stable Diffusion</center>
+# <center>Stable Diffusion CPU ONLY Webui 2.0</center>
 
-## Created by [sd-webui](https://github.com/sd-webui)
+Currently this repo was forked and not yet working on cpuonly. I'll update the read me if and when I getting it working completely on the cpu, but this is an effort to update the webui for the requested features everyone has asked for on youtube. 
 
-## [Visit sd-webui's Discord Server](https://discord.gg/gyXNe4NySY) [![Discord Server](https://user-images.githubusercontent.com/5977640/190528254-9b5b4423-47ee-4f24-b4f9-fd13fba37518.png)](https://discord.gg/gyXNe4NySY)
+## This is based on a fork of stable diffusion created by [sd-webui](https://github.com/sd-webui), several things have been adjusted to run it with the power of just your cpu without the openvino.  
+
+
+
 
 ## Installation instructions for:
 
