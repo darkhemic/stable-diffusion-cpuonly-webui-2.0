@@ -858,4 +858,18 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, imgproc=lambda
                     [realesrgan_source, tabs],
                     _js=js_move_image('txt2img_gallery_output', 'img2img_editor'))
         """
-        
+        gr.HTML("""
+    <div id="90" style="max-width: 100%; font-size: 14px; text-align: center;" class="output-markdown gr-prose border-solid border border-gray-200 rounded gr-panel">
+        <p>For help and advanced usage guides, visit the <a href="https://github.com/hlky/stable-diffusion-webui/wiki" target="_blank">Project Wiki</a></p>
+        <p>Stable Diffusion WebUI is an open-source project. You can find the latest stable builds on the <a href="https://github.com/hlky/stable-diffusion" target="_blank">main repository</a>.
+        If you would like to contribute to development or test bleeding edge builds, you can visit the <a href="https://github.com/hlky/stable-diffusion-webui" target="_blank">developement repository</a>.</p>
+        <p>Device ID {current_device_index}: {current_device_name}<br/>{total_device_count} total devices</p>
+    </div>
+    """.format(current_device_name=torch.device(), current_device_index=torch.device(), total_device_count=torch.device_count()))
+        # Hack: Detect the load event on the frontend
+        # Won't be needed in the next version of gradio
+        # See the relevant PR: https://github.com/gradio-app/gradio/pull/2108
+        load_detector = gr.Number(value=0, label="Load Detector", visible=False)
+        load_detector.change(None, None, None, _js=js(opt))
+        demo.load(lambda x: 42, inputs=load_detector, outputs=load_detector)
+    return demo
