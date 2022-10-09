@@ -32,7 +32,6 @@ stable_diffusion_cpuonly_webui_2_repo () {
         printf "Stable Diffusion cpuonly webui 2.0 already exists. Do you want to update Stable Diffusion cpuonly webui 2.0?\n"
         printf "(This will reset your installation if you are experiencing issues)\n"
         printf "Pulling updates for the Stable Diffusion cpuonly webui 2.0. Please wait...\n"; stable_diffusion_cpuonly_webui_2_repo_update;         
-        done
     else
         printf "Cloning Stable Diffusion cpuonly webui 2.0. Please wait..."
         git clone https://github.com/darkhemic/stable-diffusion-cpuonly-webui-2.0.git
