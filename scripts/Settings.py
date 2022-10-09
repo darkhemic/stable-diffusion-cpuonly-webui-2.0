@@ -120,10 +120,10 @@ def layout():
 																						key="esrgan_gpu").split(":")[0])
 
 				st.session_state["defaults"].general.no_half = st.checkbox("No Half", value=st.session_state['defaults'].general.no_half,
-																		   help="DO NOT switch the model to 16-bit floats. Default: False")
+																		   help="DO NOT switch the model to 16-bit floats. Default: True")
 
 				st.session_state["defaults"].general.use_float16 = st.checkbox("Use float16", value=st.session_state['defaults'].general.use_float16,
-																		   help="Switch the model to 16-bit floats. Default: False")
+																		   help="Switch the model to 16-bit floats. Default: True")
 
 				precision_list = ['full','autocast']
 				st.session_state["defaults"].general.precision = st.selectbox("Precision", precision_list, index=precision_list.index(st.session_state['defaults'].general.precision),

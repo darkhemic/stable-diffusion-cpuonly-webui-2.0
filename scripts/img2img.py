@@ -46,7 +46,7 @@ except:
 	pass
 
 def img2img(prompt: str = '', init_info: any = None, init_info_mask: any = None, mask_mode: int = 0, mask_blur_strength: int = 3,
-	    mask_restore: bool = False, ddim_steps: int = 50, sampler_name: str = 'DDIM',
+	    mask_restore: bool = False, ddim_steps: int = 30, sampler_name: str = 'DDIM',
 	    n_iter: int = 1,  cfg_scale: float = 7.5, denoising_strength: float = 0.8,
 	    seed: int = -1, noise_mode: int = 0, find_noise_steps: str = "", height: int = 512, width: int = 512, resize_mode: int = 0, fp = None,
 	    variant_amount: float = None, variant_seed: int = None, ddim_eta:float = 0.0,

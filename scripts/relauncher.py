@@ -20,7 +20,7 @@ import os, time, argparse
 # Change to `True` if you wish to enable these common arguments
 
 # Run upscaling models on the CPU
-extra_models_cpu = False
+extra_models_cpu = True
 
 # Automatically open a new browser window or tab on first launch
 open_in_browser = False
@@ -29,10 +29,10 @@ open_in_browser = False
 optimized = False
 
 # Run in Optimized Turbo Mode - Needs more VRAM than regular optimized mode, but is faster
-optimized_turbo = False
+optimized_turbo = True
 
 # Creates a public xxxxx.gradio.app share link to allow others to use your interface (requires properly forwarded ports to work correctly)
-share = False
+share = True
 
 # Generate tiling images
 tiling = False
@@ -41,22 +41,7 @@ additional_arguments = ""
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-v', '--verbosity', action='count', default=0, help="The default logging level is ERROR or higher. This value increases the amount of logging seen in your screen")
-parser.add_argument('-n', '--horde_name', action="store", required=False, type=str, help="The server name for the Horde. It will be shown to the world and there can be only one.")
-parser.add_argument('--bridge', action="store_true", required=False, default=False, help="When specified, start the stable horde bridge instead of the webui.")
 args = parser.parse_args()
-
-if args.bridge:
-    additional_arguments += f' --bridge'
-    if args.horde_name:
-        additional_arguments += f' --horde_name "{args.horde_name}"'
-    if args.verbosity:
-        for iter in range(args.verbosity):
-            additional_arguments += ' -v'
-    print(f"Additional args: {additional_arguments}")
-
-
-
-
 
 # BEGIN RELAUNCHER PYTHON CODE
 
