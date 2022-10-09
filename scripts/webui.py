@@ -513,8 +513,9 @@ def load_SD_model():
         config = OmegaConf.load(opt.config)
         model = load_model_from_config(config, opt.ckpt)
 
-        device = torch.device("cpu")
-        model = model.to(device)
+        device = torch.device(f"cuda:{opt.gpu}") if torch.cuda.is_available() else torch.device("cpu")
+
+        model = (model if opt.no_half else model.half()).to(device)
     return model, device,config
 
 if opt.optimized:
