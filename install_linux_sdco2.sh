@@ -69,6 +69,7 @@ stable_diffusion_cpuonly_webui_2 () {
                     Yes ) printf "Starting Stable Diffusion cpuonly webui 2.0 using previous parameters. Please wait..."; linux_setup_script; break;;
                     No ) printf "Beginning updating Stable Diffusion cpuonly webui 2.0..."; stable_diffusion_cpuonly_webui_2 initial; break;;
                 esac
+            done
         else
             printf "ERROR: Conda Env not found. Will attempt to rebuild, please go through the update steps below...\n"
             stable_diffusion_cpuonly_webui_2 initial
