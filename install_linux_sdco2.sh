@@ -31,11 +31,7 @@ stable_diffusion_cpuonly_webui_2_repo () {
         printf "\n\n########## CHECK FOR UPDATES ##########\n\n"
         printf "Stable Diffusion cpuonly webui 2.0 already exists. Do you want to update Stable Diffusion cpuonly webui 2.0?\n"
         printf "(This will reset your installation if you are experiencing issues)\n"
-        select yn in "Yes" "No"; do
-            case $yn in
-                Yes ) printf "Pulling updates for the Stable Diffusion cpuonly webui 2.0. Please wait...\n"; stable_diffusion_cpuonly_webui_2_repo_update; break;;
-                No ) printf "Stable Diffusion cpuonly webui 2.0 will not be updated. Continuing...\n"; break;;
-            esac
+        printf "Pulling updates for the Stable Diffusion cpuonly webui 2.0. Please wait...\n"; stable_diffusion_cpuonly_webui_2_repo_update;         
         done
     else
         printf "Cloning Stable Diffusion cpuonly webui 2.0. Please wait..."
@@ -125,11 +121,11 @@ stable_diffusion_cpuonly_webui_2 () {
         if [[ $(conda env list | grep "$ENV") = $ENV* ]]; then
             printf "\n\n########## RUN PREVIOUS SETUP ##########\n\n"
             printf "Do you wish to run Stable Diffusion cpuonly webui 2.0 with the previous parameters?\n"
-            printf "(Select NO to customize or update your Stable Diffusion cpuonly webui 2.0 setup)\n"
+            printf "(Select NO to update or fix your Stable Diffusion cpuonly webui 2.0 setup)\n"
             select yn in "Yes" "No"; do
                 case $yn in
                     Yes ) printf "Starting Stable Diffusion cpuonly webui 2.0 using previous parameters. Please wait..."; linux_setup_script; break;;
-                    No ) printf "Beginning customization of Stable Diffusion cpuonly webui 2.0..."; stable_diffusion_cpuonly_webui_2 initial; break;;
+                    No ) printf "Beginning updating Stable Diffusion cpuonly webui 2.0..."; stable_diffusion_cpuonly_webui_2 initial; break;;
                 esac
             done
         else
