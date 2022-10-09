@@ -514,7 +514,7 @@ def load_SD_model():
         model = load_model_from_config(config, opt.ckpt)
 
         device = torch.device("cpu")
-        model = (model if opt.no_half else model.half()).to(device)
+        model = model.to(device)
     return model, device,config
 
 if opt.optimized:
