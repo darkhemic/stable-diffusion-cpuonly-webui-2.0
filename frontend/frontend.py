@@ -858,4 +858,3 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, imgproc=lambda
                     [realesrgan_source, tabs],
                     _js=js_move_image('txt2img_gallery_output', 'img2img_editor'))
         """
-        gr.HTML("""
