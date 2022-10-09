@@ -865,7 +865,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x, imgproc=lambda
         If you would like to contribute to development or test bleeding edge builds, you can visit the <a href="https://github.com/hlky/stable-diffusion-webui" target="_blank">developement repository</a>.</p>
         <p>Device ID {current_device_index}: {current_device_name}<br/>{total_device_count} total devices</p>
     </div>
-    """.format(current_device_name=torch.device(), current_device_index=torch.device(), total_device_count=torch.device_count()))
+    """.format(current_device_name=(cpu), current_device_index=torch.device(cpu), total_device_count=torch.device_count(cpu])))
         # Hack: Detect the load event on the frontend
         # Won't be needed in the next version of gradio
         # See the relevant PR: https://github.com/gradio-app/gradio/pull/2108
